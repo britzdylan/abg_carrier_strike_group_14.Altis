@@ -1,0 +1,59 @@
+#include "\a3\ui_f\hpp\defineCommonGrids.inc"
+#include "\a3\ui_f\hpp\defineResincl.inc"
+
+#include "dialogs\spawnDialog.hpp"
+
+
+class CfgFunctions {
+    class EAS 
+    {
+        class loadoutsUsmc {
+            file = "functions\loadouts\usmc";
+            class aATSpec {};
+            class AAV {};
+            class AMGSpec {};
+            class ammoTruck {};
+            class AMortarSpec {};
+            class AMV {};
+            class ATSpec {};
+            class AutoRifleman {};
+            class CrewMan {};
+            class Dms {};
+            class Engineer {};
+            class ExpSpec {};
+            class GMGSpec {};
+            class HMGSpec {};
+            class LATSpec {};
+            class Medic {};
+            class MortarSpec {};
+            class MrapAt {};
+            class MRAPBasic {};
+            class RepairSpec {};
+            class Rifleman {};
+            class Schorcher {};
+            class SquadLead {};
+            class TeamLead {};
+        };
+
+        class skills {
+            file = "functions\skills";
+            class regular {};
+            class regularDM {};
+            class regularDriver {};
+            class regularLeader {};
+        };
+        class setup {
+            file = "functions\setup";
+            class setIdentities {
+                postInit = 1;
+            };
+        };
+        class spawnDialog {
+            file = "functions\ui\spawnDialog";
+            class openSpawnDialog {};
+            class onDeploymentSelect {};
+            class onUnitSelect {};
+            class deployUnit {};
+        }
+    };
+};

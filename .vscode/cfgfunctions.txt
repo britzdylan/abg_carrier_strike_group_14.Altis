@@ -1,0 +1,11 @@
+
+    class EAS 
+    {
+        class spawnDialog {
+            file = "functions\ui\spawnDialog";
+            class openSpawnDialog {};
+            class onDeploymentSelect {};
+            class onUnitSelect {};
+            class deployUnit {};
+        }
+    };
