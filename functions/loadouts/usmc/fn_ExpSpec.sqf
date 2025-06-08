@@ -49,7 +49,7 @@ for "_i" from 1 to 2 do {
 	_unit addItemToBackpack "SLAMDirectionalMine_Wire_Mag";
 };
 _unit addItemToBackpack "DemoCharge_Remote_Mag";
-_unit addHeadgear "EF_H_MCH_BasicNet_DesNet_Des";
+_unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "G_Combat";
 
 comment "Add items";

@@ -34,7 +34,7 @@ for "_i" from 1 to 2 do {
 for "_i" from 1 to 2 do {
 	_unit addItemToVest "200Rnd_65x39_cased_Box";
 };
-_unit addHeadgear "EF_H_MCH_BasicNet_DesNet_Des";
+_unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";

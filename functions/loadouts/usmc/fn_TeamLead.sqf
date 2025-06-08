@@ -42,7 +42,7 @@ _unit addItemToVest "1Rnd_Smoke_Grenade_shell";
 _unit addItemToVest "1Rnd_SmokeRed_Grenade_shell";
 _unit addItemToVest "1Rnd_SmokeGreen_Grenade_shell";
 _unit addItemToVest "1Rnd_SmokeYellow_Grenade_shell";
-_unit addHeadgear "EF_H_MCH_FullCamoDes";
+_unit addHeadgear "EF_H_MCH_FullCamo_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";

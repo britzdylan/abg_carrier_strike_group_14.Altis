@@ -1,12 +1,31 @@
 #include "\a3\ui_f\hpp\defineCommonGrids.inc"
 #include "\a3\ui_f\hpp\defineResincl.inc"
-
 #include "dialogs\spawnDialog.hpp"
+#include "config\cfgConstants.hpp"
 
 
 class CfgFunctions {
     class EAS 
     {
+        class global {
+            file = "functions";
+            class freezeAi {};
+            class cinemaMode {};
+            class adjustVolume {};
+        };
+
+        class garrison {
+            file = "functions\garrison";
+            class heliSpawnDialog {};
+        }
+
+        class helpers {
+            file = "functions\helpers";
+            class getInfantryConfig {};
+            class getRotorWingConfig {};
+            class isVehicleInTriggerAlive {};
+        }
+
         class loadoutsUsmc {
             file = "functions\loadouts\usmc";
             class aATSpec {};
@@ -17,6 +36,7 @@ class CfgFunctions {
             class AMV {};
             class ATSpec {};
             class AutoRifleman {};
+            class boatCrewman {};
             class CrewMan {};
             class Dms {};
             class Engineer {};
@@ -45,14 +65,19 @@ class CfgFunctions {
         };
         class setup {
             file = "functions\setup";
-            class setIdentities {
+            class units {
                 postInit = 1;
             };
         };
+        class units {
+            file = "functions\units";
+
+            class processVehicles {};
+            class usmc {};
+        }
         class spawnDialog {
             file = "functions\ui\spawnDialog";
             class openSpawnDialog {};
-            class onDeploymentSelect {};
             class onUnitSelect {};
             class deployUnit {};
         }

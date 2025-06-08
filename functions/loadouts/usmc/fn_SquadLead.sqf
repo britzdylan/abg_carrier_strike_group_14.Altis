@@ -42,7 +42,7 @@ for "_i" from 1 to 8 do {
 };
 _unit addItemToVest "Aegis_HandFlare_Green";
 _unit addItemToVest "B_IR_Grenade";
-_unit addHeadgear "EF_H_MCH_FullCamoDes";
+_unit addHeadgear "EF_H_MCH_FullCamo_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";

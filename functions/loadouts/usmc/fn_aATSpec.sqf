@@ -39,7 +39,7 @@ _unit addItemToVest "B_IR_Grenade";
 for "_i" from 1 to 2 do {
 	_unit addItemToBackpack "Titan_AT";
 };
-_unit addHeadgear "EF_H_MCH_BasicNet_DesNet_Des";
+_unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 // comment "Add items"// 

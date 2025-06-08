@@ -43,7 +43,7 @@ _unit addItemToBackpack "Medikit";
 for "_i" from 1 to 10 do {
 	_unit addItemToBackpack "FirstAidKit";
 };
-_unit addHeadgear "EF_H_MCH_BasicNet_DesNet_Des";
+_unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";

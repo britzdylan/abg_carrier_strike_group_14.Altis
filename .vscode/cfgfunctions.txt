@@ -1,10 +1,77 @@
 
     class EAS 
     {
+        class global {
+            file = "functions";
+            class freezeAi {};
+            class cinemaMode {};
+            class adjustVolume {};
+        };
+
+        class garrison {
+            file = "functions\garrison";
+            class heliSpawnDialog {};
+        }
+
+        class helpers {
+            file = "functions\helpers";
+            class getInfantryConfig {};
+            class getRotorWingConfig {};
+            class isVehicleInTriggerAlive {};
+        }
+
+        class loadoutsUsmc {
+            file = "functions\loadouts\usmc";
+            class aATSpec {};
+            class AAV {};
+            class AMGSpec {};
+            class ammoTruck {};
+            class AMortarSpec {};
+            class AMV {};
+            class ATSpec {};
+            class AutoRifleman {};
+            class boatCrewman {};
+            class CrewMan {};
+            class Dms {};
+            class Engineer {};
+            class ExpSpec {};
+            class GMGSpec {};
+            class HMGSpec {};
+            class LATSpec {};
+            class medHeli {};
+            class Medic {};
+            class MortarSpec {};
+            class MrapAt {};
+            class MRAPBasic {};
+            class RepairSpec {};
+            class Rifleman {};
+            class Schorcher {};
+            class SquadLead {};
+            class TeamLead {};
+        };
+
+        class skills {
+            file = "functions\skills";
+            class regular {};
+            class regularDM {};
+            class regularDriver {};
+            class regularLeader {};
+        };
+        class setup {
+            file = "functions\setup";
+            class units {
+                postInit = 1;
+            };
+        };
+        class units {
+            file = "functions\units";
+
+            class processVehicles {};
+            class usmc {};
+        }
         class spawnDialog {
             file = "functions\ui\spawnDialog";
             class openSpawnDialog {};
-            class onDeploymentSelect {};
             class onUnitSelect {};
             class deployUnit {};
         }

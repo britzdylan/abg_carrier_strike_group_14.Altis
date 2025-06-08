@@ -70,7 +70,7 @@ class RscSpawnDialog
         class TitleBar: RscText
         {
             idc = IDC_TITLE;
-            text = "Title";
+            text = "CSG14: Garrison";
             x = 0;
             y = 0;
             w = 1;
@@ -113,7 +113,7 @@ class RscSpawnDialog
             w = 0.64;
             h = 0.95;
             sizeEx = 0.032;
-            onLBSelChanged = "[] call EAS_fnc_onUnitSelect;";
+            onLBSelChanged = "_this call EAS_fnc_onUnitSelect;";
         };
         
         // Right panel - Unit image
@@ -136,11 +136,10 @@ class RscSpawnDialog
             x = 0.66;
             y = 0.38;
             w = 0.33;
-            h = 0.15;
-            size = 0.03;
+            h = 0.51;
             style = ST_MULTI;
             colorBackground[] = {0.2,0.2,0.2,1};
-            text = "• Long list of unit information and stats<br/>and specs";
+            text = "";
             class Attributes
             {
                 font = "RobotoCondensed";
@@ -150,33 +149,19 @@ class RscSpawnDialog
             };
         };
         
-        // Status area
-        class StatusArea: RscStructuredText
-        {
-            idc = IDC_STATUS_AREA;
-            text = "Status of the unit";
-            x = 0.66;
-            y = 0.58;
-            w = 0.33;
-            h = 0.20;
-            style = ST_MULTI;
-            colorBackground[] = {0.2,0.2,0.2,1};
-            sizeEx = 0.03;
-        };
-        
         // // Deploy button
         class DeployButton: RscButton
         {
             idc = IDC_DEPLOY_BUTTON;
             text = "Deploy";
             x = 0.66;
-            y = 0.79;
+            y = 0.90;
             w = 0.33;
             h = 0.04;
             colorBackground[] = {0.2,0.3,0.8,1};
             colorBackgroundActive[] = {0.3,0.4,0.9,1};
             colorFocused[] = {0.3,0.4,0.9,1};
-            onButtonClick = "[] call EAS_fnc_deployUnit;";
+            onButtonClick = "_this call EAS_fnc_deployUnit;";
         };
         
         // // Close button
@@ -185,7 +170,7 @@ class RscSpawnDialog
             idc = IDC_CLOSE_BUTTON;
             text = "Close";
             x = 0.66;
-            y = 0.84;
+            y = 0.95;
             w = 0.33;
             h = 0.04;
             colorBackground[] = {0.4,0.4,0.4,1};

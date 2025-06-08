@@ -49,7 +49,7 @@ _unit addItemToBackpack "B_IR_Grenade";
 for "_i" from 1 to 5 do {
 	_unit addItemToBackpack "SmokeShellBlue";
 };
-_unit addHeadgear "EF_H_MCH_BasicNet_DesNet_Des";
+_unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";

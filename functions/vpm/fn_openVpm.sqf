@@ -1,1 +1,0 @@
-[] call EAS_fnc_openSpawnDialog;

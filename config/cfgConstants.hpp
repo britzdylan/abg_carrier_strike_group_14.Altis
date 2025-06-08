@@ -3,9 +3,9 @@ class cfgInfantry {
     {
         displayName = "USMC Infantry Squad";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 36;
+        spawnLimit = 27;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Echo",
             "Gulf",
             "Fox"
@@ -28,9 +28,9 @@ class cfgInfantry {
     {
         displayName = "USMC Weapons Squad";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 36;
+        spawnLimit = 9;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Echo",
             "Gulf",
             "Fox"
@@ -55,13 +55,16 @@ class cfgInfantry {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 6;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Danger"
         };
         unitClasses[] = {
             "EF_B_Marine_TL_Des", 
             "EF_B_Marine_GMG_Des", 
             "EF_B_Marine_AMG_Des"
+        };
+        attached[] = {
+            "USMC_hunter"
         };
     };
 
@@ -71,13 +74,16 @@ class cfgInfantry {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Mike"
         };
         unitClasses[] = {
             "EF_B_Marine_TL_Des", 
             "EF_B_Marine_Mort_Des", 
             "EF_B_Marine_AMort_Des"
+        };
+        attached[] = {
+            "USMC_hunter"
         };
     };
 
@@ -87,13 +93,16 @@ class cfgInfantry {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 4;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Bravo"
         };
         unitClasses[] = {
             "EF_B_Marine_TL_Des", 
             "EF_B_Marine_AT_Des", 
             "EF_B_Marine_AAT_Des"
+        };
+        attached[] = {
+            "USMC_HunterAT"
         };
     };
 
@@ -103,7 +112,7 @@ class cfgInfantry {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 7;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Sierra"
         };
         unitClasses[] = {
@@ -115,9 +124,12 @@ class cfgInfantry {
             "EF_B_Marine_Mark_Des", 
             "EF_B_Marine_R_Des", 
             "EF_B_Marine_Exp_Des",
+            "EF_B_Marine_Crew_Des",
+            "EF_B_Marine_Crew_Des",
             "EF_B_Marine_Crew_Des"
-            "EF_B_Marine_Crew_Des"
-            "EF_B_Marine_Crew_Des"
+        };
+        attached[] = {
+            "USMC_amv"
         };
     };
 
@@ -127,14 +139,17 @@ class cfgInfantry {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 6;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Charlie"
         };
         unitClasses[] = {
             "EF_B_Marine_TL_Des", 
-            "EF_B_Marine_Repair_Des"
+            "EF_B_Marine_Repair_Des",
             "EF_B_Marine_Eng_Des", 
             "EF_B_Marine_Eng_Des"
+        };
+        attached[] = {
+            "USMC_hunter_hmg"
         };
     };
 
@@ -142,9 +157,9 @@ class cfgInfantry {
     {
         displayName = "USMC MP Squad";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 6;
+        spawnLimit = 1;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Kilo"
         };
         unitClasses[] = {
@@ -167,16 +182,20 @@ class cfgInfantry {
             "EF_B_Marine_Medic_Des",
             "EF_B_Marine_Medic_Des"
         };
+        attached[] = {
+            "USMC_hemtt_transport"
+        };
     };
 };
 
+// spawns with crew
 class cfgCrewedVehicles {
     class USMC_mbt {
         displayName = "USMC MBT";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 4;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Bison",
         };
         className = "EF_B_MBT_01_TUSK_MJTF_Des";
@@ -186,7 +205,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 12;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Reaper",
         };
         className = "EF_B_AAV9_50mm_MJTF_Des";
@@ -196,7 +215,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 2;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Anvil",
         };
         className = "B_MBT_01_arty_F";
@@ -206,7 +225,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 4;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Hotel",
         };
         className = "EF_B_Truck_01_medical_MJTF_Des";
@@ -216,7 +235,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 12;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Romeo",
         };
         className = "EF_B_Truck_01_transport_MJTF_Des";
@@ -226,7 +245,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Able",
         };
         className = "EF_B_Truck_01_ammo_MJTF_Des";
@@ -236,7 +255,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Whiskey",
         };
         className = "EF_B_Truck_01_fuel_MJTF_Des";
@@ -246,7 +265,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Uniform",
         };
         className = "EF_B_Truck_01_Repair_MJTF_Des";
@@ -256,7 +275,7 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 3;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Kilo",
         };
         className = "EF_B_MRAP_01_FSV_MJTF_Des";
@@ -266,13 +285,14 @@ class cfgCrewedVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 3;
         image = "images\units\infantry_platoon.paa";
-        callsigns[] {
+        callsigns[] = {
             "Kilo",
         };
         className = "EF_B_MRAP_01_LAAD_MJTF_Des";
     };
 };
 
+// can only be spawned when attached to its parent
 class cfgAttachedVehicles {
     class USMC_amv {
         displayName = "USMC AMV 7 Marshal";
@@ -290,7 +310,8 @@ class cfgAttachedVehicles {
     };
 };
 
-class cfgSupportVehicles {
+// can spawn alone or with a squad
+class cfgEmptyVehicles {
     class USMC_hunter {
         displayName = "USMC Unarmed MRAP";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
@@ -318,5 +339,39 @@ class cfgSupportVehicles {
         spawnLimit = 2;
         image = "images\units\infantry_platoon.paa";
         className = "EF_B_Truck_01_transport_MJTF_Des";
+    };
+};
+
+// load options
+class cfgRotorWings {
+    class B_Heli_Transport_03_F {
+        capacity = 16;
+        loadOptions[] = {
+            "USMC_Infantry_Squad",
+            "USMC_Infantry_Weapons",
+            "USMC_Infantry_HMG",
+            "USMC_Infantry_Mortar",
+            "USMC_Infantry_AT"
+        };
+    };
+
+    class B_Heli_EC_04_military_RF {
+        capacity = 20;
+        loadOptions[] = {
+            "USMC_Infantry_Squad",
+            "USMC_Infantry_Weapons",
+            "USMC_Infantry_HMG",
+            "USMC_Infantry_Mortar",
+            "USMC_Infantry_AT"
+        };
+    };
+
+     class EF_B_Heli_Transport_01_MJTF_Des {
+        capacity = 8;
+        loadOptions[] = {
+            "USMC_Infantry_HMG",
+            "USMC_Infantry_Mortar",
+            "USMC_Infantry_AT"
+        };
     };
 };

@@ -1,25 +1,13 @@
 // Function to open the dialog
+params ["_validLoadOptions"];
 createDialog "RscSpawnDialog";
 
     // get display and controls
 private _display = findDisplay 5000;
 private _unitList = _display displayCtrl 5002;
 
-    // Populate unit list (placeholder data)
 {
-	_unitList lbAdd _x;
+	private _index = _unitList lbAdd (_x select 0);
+	_unitList lbSetData [_index, (_x select 1)];
 }
-forEach [
-	"Rifle Squad",
-	"Weapons Team",
-	"Recon Team",
-	"AT Team",
-	"Hunter HMG",
-	"Marshall IFV",
-	"Prowler AT",
-	"Blackfoot"
-];
-
-//     // select first items
-// _unitList lbSetCurSel 0;
-// _deploymentList lbSetCurSel 0;
+forEach _validLoadOptions;
