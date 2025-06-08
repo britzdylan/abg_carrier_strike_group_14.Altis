@@ -4,7 +4,6 @@ createDialog "RscSpawnDialog";
     // get display and controls
 private _display = findDisplay 5000;
 private _unitList = _display displayCtrl 5002;
-private _deploymentList = _display displayCtrl 5003;
 
     // Populate unit list (placeholder data)
 {
@@ -19,19 +18,6 @@ forEach [
 	"Marshall IFV",
 	"Prowler AT",
 	"Blackfoot"
-];
-
-    // Populate deployment options (placeholder data)
-{
-	_deploymentList lbAdd _x;
-}
-forEach [
-	"Alpha Landing Zone",
-	"Bravo Landing Zone",
-	"Charlie Landing Zone",
-	"Base Main Entrance",
-	"North Checkpoint",
-	"South Checkpoint"
 ];
 
 //     // select first items
