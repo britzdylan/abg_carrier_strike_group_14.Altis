@@ -24,6 +24,7 @@ class CfgFunctions {
             class GMGSpec {};
             class HMGSpec {};
             class LATSpec {};
+            class medHeli {};
             class Medic {};
             class MortarSpec {};
             class MrapAt {};

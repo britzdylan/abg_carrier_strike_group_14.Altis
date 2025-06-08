@@ -7,7 +7,7 @@
 		_x disableAI "ALL";
 		_x enableSimulation false;
 		_x allowDamage false;
-		_X hideObject true;
+		_x hideObject true;
 		_unitClassName = typeOf _x;
 		// pilots ====================================================
 		switch (_unitClassName) do {
@@ -187,8 +187,12 @@
 {
 	_unitClassName = typeOf _x;
 
+	// _X hideObject true;
 	switch (_unitClassName) do {
 		case "Aegis_B_MJTF_D_APC_Wheeled_01_atgm_v2": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[
 				_x,
 				["Sand", 1],
@@ -197,44 +201,135 @@
 			[_x] call EAS_fnc_AMV;
 		};
 		case "EF_B_AAV9_50mm_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_AAV;
 		};
 		case "B_MBT_01_arty_F": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_Schorcher;
 		};
+		case "EF_B_MBT_01_TUSK_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
+		};
 		case "EF_B_Truck_01_medical_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			clearItemCargoGlobal _x;
 			_x addItemCargoGlobal ["FirstAidKit", 100];
 		};
 		case "EF_B_Truck_01_fuel_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			clearItemCargoGlobal _x;
 		};
 		case "EF_B_Truck_01_Repair_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			clearItemCargoGlobal _x;
 		};
 		case "EF_B_Truck_01_ammo_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_ammoTruck;
 		};
 		case "EF_B_Truck_01_transport_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			clearItemCargoGlobal _x;
 		};
 		case "EF_B_MRAP_01_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_MRAPBasic;
 		};
 		case "EF_B_MRAP_01_hmg_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_MRAPBasic;
 		};
 		case "EF_B_MRAP_01_gmg_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_MRAPBasic;
 		};
 		case "EF_B_MRAP_01_AT_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_MrapAt;
 		};
 		case "EF_B_MRAP_01_LAAD_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_MRAPBasic;
 		};
 		case "EF_B_MRAP_01_FSV_MJTF_Des": {
+			_x enableSimulation false;
+			_x allowDamage false;
+			_x hideObject true;
 			[_x] call EAS_fnc_MRAPBasic;
+		};
+		case "B_Heli_EC_04_military_RF": {
+			[_x] call EAS_fnc_medHeli;
+			_x enableSimulation true;
+			_x allowDamage true;
+		};
+		case "B_Heli_Transport_03_unarmed_F": {
+			[_x] call EAS_fnc_medHeli;
+			_x enableSimulation true;
+			_x allowDamage true;
+
+			[
+				_x,
+				"Assign Group",
+				"",
+				"",
+				{
+					alive player && (getPos _x) inArea EAS_areaBoat;
+				},
+				"true",
+				{
+					hint "Started!";
+				},
+				{
+					systemChat str (_this select 3);
+				},
+				{
+					params ["_target", "_caller", "_actionId", "_arguments"];
+					// [_target] EAS_fnc_openVpm;
+				},
+				{},
+				[],
+				10,
+				nil,
+				false,
+				false
+			] call BIS_fnc_holdActionAdd;
+		};
+		case "EF_B_Heli_Transport_01_MJTF_Des": {
+			[_x] call EAS_fnc_medHeli;
+			_x enableSimulation true;
+			_x allowDamage true;
+		};
+		case "EF_B_AH99J_MJTF_Des": {
+			[_x] call EAS_fnc_medHeli;
+			_x enableSimulation true;
+			_x allowDamage true;
 		};
 		default {};
 	}

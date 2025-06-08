@@ -84,21 +84,11 @@ class RscSpawnDialog
             idc = -1;
             x = 0.01;
             y = 0.05;
-            w = 0.32;
+            w = 0.64;
             h = 0.95;
             colorBackground[] = {0.15,0.15,0.15,1};
         };
-        
-        // Middle panel background
-        class MiddlePanelBG: RscText
-        {
-            idc = -1;
-            x = 0.33;
-            y = 0.05;
-            w = 0.32;
-            h = 0.95;
-            colorBackground[] = {0.15,0.15,0.15,1};
-        };
+
         
         // Right panel background
         class RightPanelBG: RscText
@@ -120,22 +110,10 @@ class RscSpawnDialog
             idc = IDC_UNIT_LIST;
             x = 0.01;
             y = 0.05;
-            w = 0.32;
+            w = 0.64;
             h = 0.95;
             sizeEx = 0.032;
             onLBSelChanged = "[] call EAS_fnc_onUnitSelect;";
-        };
-        
-        // Middle panel - Deployment options
-        class DeploymentList: RscListBox
-        {
-            idc = IDC_DEPLOYMENT_LIST;
-            x = 0.33;
-            y = 0.05;
-            w = 0.32;
-            h = 0.95;
-            sizeEx = 0.032;
-            onLBSelChanged = "hint 'Deployment option selected - placeholder';";
         };
         
         // Right panel - Unit image
