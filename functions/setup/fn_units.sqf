@@ -7,7 +7,6 @@ _allWestUnits = allUnits select {
 };
 [_allWestUnits] call EAS_fnc_freezeAi;
 {
-	_x hideObject true;
 	_unitClassName = typeOf _x;
 	[_x, _unitClassName] call EAS_fnc_usmc;
 	_x setVariable ["EAS_initialized", true];
@@ -17,5 +16,9 @@ _allVeh = (8 allObjects 1) select {
 	_x isKindOf "LandVehicle" || _x isKindOf "Air" || _x isKindOf "Ship"
 };
 
-_count = [_allVeh] call EAS_fnc_processVehicles;
-hint str _count;
+[_allVeh] call EAS_fnc_processVehicles;
+
+private _missionData = missionNamespace getVariable ["EAS_missionData", createHashMap];
+_missionData set ["Ready", true];
+
+[_allWestUnits, true] call EAS_fnc_freezeAi;

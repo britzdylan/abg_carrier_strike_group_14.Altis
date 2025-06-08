@@ -11,11 +11,11 @@ if (_className == "" || _selectedUnit < 0) exitWith {
 };
 
 private _infantryConfig = [_className] call EAS_fnc_getInfantryConfig;
-private _heli = (_missionData get "Garrison") get "target";
-private _freeSeats = _heli emptyPositions "cargo";
+private _target = (_missionData get "Garrison") get "target";
+private _freeSeats = _target emptyPositions "cargo";
 private _requiredUnits = count (_infantryConfig get "unitClasses");
 
-if (isNull _heli || !alive _heli) exitWith {
+if (isNull _target || !alive _target) exitWith {
 	hint "ERROR: No helicopter available for deployment";
 };
 
@@ -23,7 +23,7 @@ if (_requiredUnits > _freeSeats) exitWith {
 	hint "Not enough space for that group";
 };
 
-private _spawnPos = getPos _heli;
+private _spawnPos = getPos _target;
 private _unitClasses = _infantryConfig get "unitClasses";
 private _unitGroup = createGroup west;
 
@@ -35,8 +35,8 @@ private _units = [];
 } forEach _unitClasses;
 
 {
-	_x assignAsCargo _heli;
-	_x moveInCargo _heli;
+	_x assignAsCargo _target;
+	_x moveInCargo _target;
 } forEach _units;
 private _unitName = _unitList lbText _selectedUnit;
-systemChat format ["Deployment complete: %1 squad loaded into helicopter", _unitName];
+systemChat format ["Deployment complete: %1 squad loaded into %2", _unitName, _target];
