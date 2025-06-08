@@ -11,7 +11,16 @@ if (_className == "" || _selectedUnit < 0) exitWith {
 };
 
 private _infantryConfig = [_className] call EAS_fnc_getInfantryConfig;
-private _target = (_missionData get "Garrison") get "target";
+private _spawnLimit = _infantryConfig get "spawnLimit";
+
+private _garrison = _missionData get "Garrison";
+private _canSpawn = (_garrison get "infantrySquadsDeployed") < _spawnLimit;
+hint str _canSpawn;
+if (!_canSpawn) exitWith {
+	systemChat "All unit reserves exhausted";
+};
+
+private _target = _garrison get "target";
 private _freeSeats = _target emptyPositions "cargo";
 private _requiredUnits = count (_infantryConfig get "unitClasses");
 
@@ -40,3 +49,4 @@ private _units = [];
 } forEach _units;
 private _unitName = _unitList lbText _selectedUnit;
 systemChat format ["Deployment complete: %1 squad loaded into %2", _unitName, _target];
+[_garrison, "infantrySquadsDeployed"] call fnc_incrementCounter;

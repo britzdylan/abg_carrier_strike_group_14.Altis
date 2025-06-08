@@ -1,4 +1,3 @@
-
 // MISSION state.
 EAS_fnc_getAllInfantryConfigs = {
 	private _infantryConfig = missionConfigFile >> "cfgInfantry";
@@ -60,5 +59,5 @@ missionNamespace setVariable ["EAS_missionData", createHashMapFromArray [
 	["Ready", false],
 	["InfantryConfig", _allInfantryConfigs],
 	["RotorWingConfig", _allRotorWingConfig],
-	["Garrison", createHashMapFromArray [["target", nil]]]
+	["Garrison", createHashMapFromArray [["target", nil], ["infantrySquadsDeployed", 0]]]
 ]];

@@ -24,6 +24,7 @@ class CfgFunctions {
             class getInfantryConfig {};
             class getRotorWingConfig {};
             class isVehicleInTriggerAlive {};
+            class incrementCounter {};
         }
 
         class loadoutsUsmc {
