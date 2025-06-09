@@ -23,12 +23,8 @@ class CfgFunctions {
 
         class helpers {
             file = "functions\helpers";
-            class getInfantryConfig {};
-            class getNavalConfig {};
-            class getRotorWingConfig {};
             class isVehicleInTriggerAlive {};
             class incrementCounter {};
-            class getVehinVehLoadOptions {};
             class applyLoadout {};
         }
 
