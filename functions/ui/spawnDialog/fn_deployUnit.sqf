@@ -15,7 +15,7 @@ private _spawnLimit = _infantryConfig get "spawnLimit";
 
 private _garrison = _missionData get "Garrison";
 private _canSpawn = (_garrison get "infantrySquadsDeployed") < _spawnLimit;
-hint str _canSpawn;
+
 if (!_canSpawn) exitWith {
 	systemChat "All unit reserves exhausted";
 };
@@ -25,11 +25,11 @@ private _freeSeats = _target emptyPositions "cargo";
 private _requiredUnits = count (_infantryConfig get "unitClasses");
 
 if (isNull _target || !alive _target) exitWith {
-	hint "ERROR: No helicopter available for deployment";
+	systemChat "ERROR: No helicopter available for deployment";
 };
 
 if (_requiredUnits > _freeSeats) exitWith {
-	hint "Not enough space for that group";
+	systemChat "Not enough space for that group";
 };
 
 private _spawnPos = getPos _target;
@@ -40,7 +40,7 @@ private _units = [];
 {
 	private _unit = _unitGroup createUnit [_x, _spawnPos, [], 0, "NONE"];
 	_units pushBack _unit;
-	[_unit, _x] spawn EAS_fnc_usmc;
+	[_unit] call EAS_fnc_applyLoadout;
 } forEach _unitClasses;
 
 {

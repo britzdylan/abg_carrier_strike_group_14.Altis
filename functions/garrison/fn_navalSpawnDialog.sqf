@@ -10,7 +10,7 @@ private _vehicles = _missionData get "cfgVehicles";
 _validLoadOptions = [];
 {
 	private _config = _vehicles get _x;
-	hint str _x;
+
 	if (!(_config isEqualTo createHashMap)) then {
 		private _displayName = _config get "displayName";
 		_validLoadOptions pushBack [_displayName, _x];

@@ -196,6 +196,7 @@ class cfgVehicles {
         spawnLimit = 7;
         image = "images\units\infantry_platoon.paa";
         type = "attached";
+        unit = "USMC_Infantry_LAR";
     };
     class EF_B_MRAP_01_AT_MJTF_Des {
         displayName = "USMC AT MRAP";
@@ -203,6 +204,7 @@ class cfgVehicles {
         spawnLimit = 4;
         image = "images\units\infantry_platoon.paa";
         type = "attached";
+        unit = "USMC_Infantry_AT";
     };
     // empty
     class EF_B_MRAP_01_MJTF_Des  {

@@ -7,20 +7,9 @@ _allWestUnits = allUnits select {
 };
 [_allWestUnits] call EAS_fnc_freezeAi;
 {
-    _unitClassName = typeOf _x;
-    
-    // Try to call a function based on the class name
-    private _functionName = format ["EAS_fnc_%1", _unitClassName];
-    
-    // Check if function exists before calling
-    if (!isNil _functionName) then {
-        [_x] call (missionNamespace getVariable _functionName);
-    } else {
-        // Fallback to generic function
-        [_x, _unitClassName] call EAS_fnc_usmc;
-    };
-    
-    _x setVariable ["EAS_initialized", true];
+	[_x] call EAS_fnc_applyLoadout;
+
+	_x setVariable ["EAS_initialized", true];
 } forEach _allWestUnits;
 
 _allVeh = (8 allObjects 1);
