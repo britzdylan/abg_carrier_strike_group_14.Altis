@@ -203,8 +203,7 @@ class cfgVehicles {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 4;
         image = "images\units\infantry_platoon.paa";
-        type = "attached";
-        unit = "USMC_Infantry_AT";
+        type = "empty";
     };
     // empty
     class EF_B_MRAP_01_MJTF_Des  {

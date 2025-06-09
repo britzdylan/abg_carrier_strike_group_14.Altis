@@ -9,6 +9,9 @@ private _vehicles = _missionData get "cfgVehicles";
 // filter out loadOptions that are too big for available seats
 _validLoadOptions = [];
 {
+	if (_x == "EF_B_AAV9_50mm_MJTF_Des") then {
+		continue;
+	};
 	private _config = _vehicles get _x;
 
 	if (!(_config isEqualTo createHashMap)) then {

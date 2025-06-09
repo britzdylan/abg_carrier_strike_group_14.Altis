@@ -61,7 +61,7 @@ switch (_type) do {
 		private _requiredUnits = count (_infantryConfig get "unitClasses");
 		private _spawnPos = getPos _vehicle;
 		private _unitClasses = _infantryConfig get "unitClasses";
-		private _infSpawnLimit = _infantryConfig get "spawnLimit";
+
 		private _units = [];
 		{
 			private _unit = _unitGroup createUnit [_x, _spawnPos, [], 0, "NONE"];
@@ -109,7 +109,7 @@ switch (_type) do {
 				_unit moveInAny _vehicle;
 			};
 		} forEach _unitClasses;
-		_infantryConfig set ["spawnLimit", (_infSpawnLimit - 1)];
+		_infantryConfig set ["spawnLimit", ((_infantryConfig get "spawnLimit") - 1)];
 	};
 	default {};
 };

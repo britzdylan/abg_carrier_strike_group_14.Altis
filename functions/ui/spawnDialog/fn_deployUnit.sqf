@@ -47,6 +47,7 @@ private _units = [];
 	_x assignAsCargo _target;
 	_x moveInCargo _target;
 } forEach _units;
+_infantryConfig set ["spawnLimit", ((_infConfig get "spawnLimit") - 1)];
+
 private _unitName = _unitList lbText _selectedUnit;
 systemChat format ["Deployment complete: %1 squad loaded into %2", _unitName, _target];
-[_garrison, "infantrySquadsDeployed"] call fnc_incrementCounter;

@@ -67,13 +67,16 @@ class CfgFunctions {
         };
         class setup {
             file = "functions\setup";
+            class items {
+                postInit = 1;
+            };
             class units {
                 postInit = 1;
             };
         };
         class units {
             file = "functions\units";
-
+            class deployAAG {};
             class processVehicles {};
             class usmc {};
         }
