@@ -12,9 +12,7 @@ _allWestUnits = allUnits select {
 	_x setVariable ["EAS_initialized", true];
 } forEach _allWestUnits;
 
-_allVeh = (8 allObjects 1) select {
-	_x isKindOf "LandVehicle" || _x isKindOf "Air" || _x isKindOf "Ship"
-};
+_allVeh = (8 allObjects 1);
 
 [_allVeh] call EAS_fnc_processVehicles;
 

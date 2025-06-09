@@ -107,66 +107,55 @@ private _processedCount = 0;
 		};
 		case "B_Heli_EC_04_military_RF": {
 			[_vehicle] call EAS_fnc_medHeli;
-			[
-				_vehicle,
+			_vehicle addAction [
 				"Open Garrison",
-				"\A3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-				"\A3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-				"!(isEngineOn _target) && [_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive", "[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive",
-				{},
-				{
-					\
-				},
 				{
 					params ["_target"];
 					[_target] call EAS_fnc_heliSpawnDialog;
-				},
-				{},
-				[], 2, nil, false, false
-			] call BIS_fnc_holdActionAdd;
+				}, nil, 1, true, false, "",
+				"[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive"
+			];
 			_processedCount = _processedCount + 1;
 		};
 		case "B_Heli_Transport_03_F": {
 			[_vehicle] call EAS_fnc_medHeli;
-
-			[
-				_vehicle,
+			_vehicle addAction [
 				"Open Garrison",
-				"\A3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-				"\A3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-				"!(isEngineOn _target) && [_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive", "[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive",
-				{},
-				{},
 				{
 					params ["_target"];
 					[_target] call EAS_fnc_heliSpawnDialog;
-				},
-				{},
-				[], 2, nil, false, false
-			] call BIS_fnc_holdActionAdd;
+				}, nil, 1, true, false, "",
+				"[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive"
+			];
 			_processedCount = _processedCount + 1;
 		};
 		case "EF_B_Heli_Transport_01_MJTF_Des": {
 			[_vehicle] call EAS_fnc_medHeli;
-			[
-				_vehicle,
+			_vehicle addAction [
 				"Open Garrison",
-				"\A3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-				"\A3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-				"!(isEngineOn _target) && [_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive", "[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive",
-				{},
-				{},
 				{
 					params ["_target"];
 					[_target] call EAS_fnc_heliSpawnDialog;
-				},
-				{},
-				[], 2, nil, false, false
-			] call BIS_fnc_holdActionAdd;
+				}, nil, 1, true, false, "",
+				"[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive"
+			];
 			_processedCount = _processedCount + 1;
 		};
 		case "EF_B_AH99J_MJTF_Des": {
 			[_vehicle] call EAS_fnc_medHeli;
+			_processedCount = _processedCount + 1;
+		};
+		case "EF_B_LCC_MJTF_Des": {
+			clearItemCargoGlobal _vehicle;
+			_vehicle addAction [
+				"Open Garrison",
+				{
+					params ["_target"];
+					[_target] call EAS_fnc_heliSpawnDialog;
+				}, nil, 1, true, false, "",
+				"[_target, EAS_area_loadDeck] call EAS_fnc_isVehicleInTriggerAlive"
+			];
+
 			_processedCount = _processedCount + 1;
 		};
 		default {};
