@@ -1,6 +1,7 @@
 #include "\a3\ui_f\hpp\defineCommonGrids.inc"
 #include "\a3\ui_f\hpp\defineResincl.inc"
 #include "dialogs\spawnDialog.hpp"
+#include "dialogs\navalSpawnDialog.hpp"
 #include "config\cfgConstants.hpp"
 
 
@@ -84,6 +85,9 @@ class CfgFunctions {
             class openSpawnDialog {};
             class onUnitSelect {};
             class deployUnit {};
+            class onVehicleSelect {};
+            class openNavalSpawnDialog {};
+            class loadNaval {};
         }
     };
 };

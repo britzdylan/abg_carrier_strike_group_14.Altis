@@ -18,4 +18,4 @@ _validLoadOptions = [];
 		systemChat format ["Warning: Loadout config '%1' not found", _x];
 	};
 } forEach (keys _vehicles);
-[_validLoadOptions] call EAS_fnc_openSpawnDialog;
+[_validLoadOptions] call EAS_fnc_openNavalSpawnDialog;

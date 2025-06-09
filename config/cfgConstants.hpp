@@ -226,13 +226,6 @@ class cfgVehicles {
         image = "images\units\infantry_platoon.paa";
         type = "empty";
     };
-    class EF_B_Truck_01_transport_MJTF_Des  {
-        displayName = "USMC HEMTT Transport";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 2;
-        image = "images\units\infantry_platoon.paa";
-        type = "empty";
-    };
     // crewed
      class EF_B_MBT_01_TUSK_MJTF_Des {
         displayName = "USMC MBT";
@@ -277,7 +270,7 @@ class cfgVehicles {
     class EF_B_Truck_01_transport_MJTF_Des {
         displayName = "USMC HEMTT Transport";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 12;
+        spawnLimit = 14;
         image = "images\units\infantry_platoon.paa";
         callsigns[] = {
             "Romeo",
@@ -376,11 +369,5 @@ class cfgShips {
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 12;
         image = "images\units\infantry_platoon.paa";
-        loadOptions[] = {
-            "EF_B_MRAP_01_MJTF_Des",
-            "EF_B_MRAP_01_gmg_MJTF_Des",
-            "EF_B_MRAP_01_hmg_MJTF_Des",
-            "EF_B_Truck_01_transport_MJTF_Des"
-        };
     };
 };
