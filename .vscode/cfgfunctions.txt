@@ -11,13 +11,17 @@
         class garrison {
             file = "functions\garrison";
             class heliSpawnDialog {};
+            class navalSpawnDialog {};
         }
 
         class helpers {
             file = "functions\helpers";
             class getInfantryConfig {};
+            class getNavalConfig {};
             class getRotorWingConfig {};
             class isVehicleInTriggerAlive {};
+            class incrementCounter {};
+            class getVehinVehLoadOptions {};
         }
 
         class loadoutsUsmc {

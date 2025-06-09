@@ -2,6 +2,7 @@ params ["_control", "_selectedIndex"];
 
 private _display = findDisplay 5000;
 private _infoCtrl = _display displayCtrl 5005;
+private _missionData = missionNamespace getVariable ["EAS_missionData", createHashMap];
 
 // get the preset name from stored data
 private _className = _control lbData _selectedIndex;
@@ -11,7 +12,7 @@ if (_className == "") exitWith {
 };
 
 // get config data
-private _config = [_className] call EAS_fnc_getInfantryConfig;
+private _config = (_missionData get "cfgInfantry") get _className;
 
 if ((_config isEqualTo createHashMap)) exitWith {
 	_infoCtrl ctrlSetStructuredText parseText format ["<t color='#ff4444'>Config Error</t><br/>Loadout '%1' not found", _className];

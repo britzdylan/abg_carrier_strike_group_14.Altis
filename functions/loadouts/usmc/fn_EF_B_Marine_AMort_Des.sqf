@@ -23,7 +23,7 @@ _unit addPrimaryWeaponItem "30Rnd_556x45_AP_Stanag_Tan_RF";
 comment "Add containers";
 _unit forceAddUniform "EF_U_B_MarineCombatUniform_Des_3";
 _unit addVest "EF_V_AAV_Rifleman_Coy";
-_unit addBackpack "EF_B_Mortar_01_weapon_MJTF_des";
+_unit addBackpack "EF_B_Mortar_01_support_MJTF_des";
 
 comment "Add items to containers";
 _unit addItemToVest "FirstAidKit";
@@ -49,3 +49,7 @@ _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
 _unit linkItem "NVGoggles";
+
+[_unit, "EF_29th_MEU_LowVis"] call BIS_fnc_setUnitInsignia;
+_unit setRank "PRIVATE";
+[_unit] call EAS_fnc_regular;

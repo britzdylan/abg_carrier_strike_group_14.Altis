@@ -15,34 +15,31 @@ removeHeadgear _unit;
 removeGoggles _unit;
 
 comment "Add weapons";
-_unit addWeapon "Aegis_arifle_M4A1_GL_sand_F";
-_unit addPrimaryWeaponItem "EF_acc_pointer_IR_coy";
-_unit addPrimaryWeaponItem "ef_optic_mbs_sand";
-_unit addPrimaryWeaponItem "30Rnd_556x45_AP_Stanag_Tan_RF";
-_unit addPrimaryWeaponItem "1Rnd_HE_Grenade_shell";
+_unit addWeapon "Aegis_arifle_SR25_snd_F";
+_unit addPrimaryWeaponItem "Aegis_acc_pointer_DM_Sand";
+_unit addPrimaryWeaponItem "optic_DMS";
+_unit addPrimaryWeaponItem "Aegis_20Rnd_762x51_Sand_SMAG";
 
 comment "Add containers";
 _unit forceAddUniform "EF_U_B_MarineCombatUniform_Des_3";
-_unit addVest "EF_V_AAV_TL_Coy";
+_unit addVest "EF_V_AAV_Scout_Coy";
 
 comment "Add items to containers";
 _unit addItemToVest "FirstAidKit";
 for "_i" from 1 to 2 do {
 	_unit addItemToVest "16Rnd_9x21_Mag";
 };
-_unit addItemToVest "Chemlight_green";
-_unit addItemToVest "Aegis_HandFlare_Green";
 for "_i" from 1 to 8 do {
-	_unit addItemToVest "30Rnd_556x45_AP_Stanag_Tan_RF";
+	_unit addItemToVest "Aegis_20Rnd_762x51_Sand_SMAG";
 };
-for "_i" from 1 to 6 do {
-	_unit addItemToVest "1Rnd_HE_Grenade_shell";
+for "_i" from 1 to 2 do {
+	_unit addItemToVest "Chemlight_green";
 };
-_unit addItemToVest "1Rnd_Smoke_Grenade_shell";
-_unit addItemToVest "1Rnd_SmokeRed_Grenade_shell";
-_unit addItemToVest "1Rnd_SmokeGreen_Grenade_shell";
-_unit addItemToVest "1Rnd_SmokeYellow_Grenade_shell";
-_unit addHeadgear "EF_H_MCH_FullCamo_Des";
+_unit addItemToVest "SmokeShell";
+for "_i" from 1 to 2 do {
+	_unit addItemToVest "HandGrenade";
+};
+_unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";
@@ -51,3 +48,7 @@ _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
 _unit linkItem "NVGoggles";
+
+[_unit, "EF_29th_MEU_LowVis"] call BIS_fnc_setUnitInsignia;
+_unit setRank "CORPORAL";
+[_unit] call EAS_fnc_regularDM;

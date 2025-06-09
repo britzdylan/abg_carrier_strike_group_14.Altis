@@ -18,3 +18,9 @@ clearBackpackCargoGlobal _unit;
 {
 	_unit addBackpackCargoGlobal _x;
 } forEach [["EF_B_AssaultPack_coy", 1]];
+
+[
+	_unit,
+	["Sand", 1],
+	["showBags", 1, "showCamonetHull", 1, "showCamonetTurret", 1, "showSLATHull", 0, "showSLATTurret", 1]
+] call BIS_fnc_initVehicle;

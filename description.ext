@@ -17,44 +17,47 @@ class CfgFunctions {
         class garrison {
             file = "functions\garrison";
             class heliSpawnDialog {};
+            class navalSpawnDialog {};
         }
 
         class helpers {
             file = "functions\helpers";
             class getInfantryConfig {};
+            class getNavalConfig {};
             class getRotorWingConfig {};
             class isVehicleInTriggerAlive {};
             class incrementCounter {};
+            class getVehinVehLoadOptions {};
         }
 
         class loadoutsUsmc {
             file = "functions\loadouts\usmc";
-            class aATSpec {};
             class AAV {};
-            class AMGSpec {};
-            class ammoTruck {};
-            class AMortarSpec {};
             class AMV {};
-            class ATSpec {};
-            class AutoRifleman {};
-            class boatCrewman {};
-            class CrewMan {};
-            class Dms {};
-            class Engineer {};
-            class ExpSpec {};
-            class GMGSpec {};
-            class HMGSpec {};
-            class LATSpec {};
+            class ammoTruck {};
             class medHeli {};
-            class Medic {};
-            class MortarSpec {};
+            class EF_B_Marine_AAT_Des {};
+            class EF_B_Marine_AMG_Des {};
+            class EF_B_Marine_AMort_Des {};
+            class EF_B_Marine_AR_Des {};
+            class EF_B_Marine_AT_Des {};
+            class EF_B_Marine_BoatCrew_Des {};
+            class EF_B_Marine_Crew_Des {};
+            class EF_B_Marine_Eng_Des {};
+            class EF_B_Marine_Exp_Des {};
+            class EF_B_Marine_GMG_Des {};
+            class EF_B_Marine_HMG_Des {};
+            class EF_B_Marine_LAT2_Des {};
+            class EF_B_Marine_Mark_Des {};
+            class EF_B_Marine_Medic_Des {};
+            class EF_B_Marine_Mort_Des {};
+            class EF_B_Marine_R_Des {};
+            class EF_B_Marine_Repair_Des {};
+            class EF_B_Marine_SL_Des {};
+            class EF_B_Marine_TL_Des {};
             class MrapAt {};
             class MRAPBasic {};
-            class RepairSpec {};
-            class Rifleman {};
             class Schorcher {};
-            class SquadLead {};
-            class TeamLead {};
         };
 
         class skills {

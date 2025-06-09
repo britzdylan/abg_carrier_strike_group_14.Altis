@@ -188,9 +188,53 @@ class cfgInfantry {
     };
 };
 
-// spawns with crew
-class cfgCrewedVehicles {
-    class USMC_mbt {
+// can spawn alone or with a squad
+class cfgVehicles {
+     class Aegis_B_MJTF_D_APC_Wheeled_01_atgm_v2 {
+        displayName = "USMC AMV 7 Marshal";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 7;
+        image = "images\units\infantry_platoon.paa";
+        type = "attached";
+    };
+    class EF_B_MRAP_01_AT_MJTF_Des {
+        displayName = "USMC AT MRAP";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 4;
+        image = "images\units\infantry_platoon.paa";
+        type = "attached";
+    };
+    // empty
+    class EF_B_MRAP_01_MJTF_Des  {
+        displayName = "USMC Unarmed MRAP";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 12;
+        image = "images\units\infantry_platoon.paa";
+        type = "empty";
+    };
+    class EF_B_MRAP_01_gmg_MJTF_Des  {
+        displayName = "USMC GMG MRAP";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 9;
+        image = "images\units\infantry_platoon.paa";
+        type = "empty";
+    };
+    class EF_B_MRAP_01_hmg_MJTF_Des  {
+        displayName = "USMC HMG MRAP";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 21;
+        image = "images\units\infantry_platoon.paa";
+        type = "empty";
+    };
+    class EF_B_Truck_01_transport_MJTF_Des  {
+        displayName = "USMC HEMTT Transport";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 2;
+        image = "images\units\infantry_platoon.paa";
+        type = "empty";
+    };
+    // crewed
+     class EF_B_MBT_01_TUSK_MJTF_Des {
         displayName = "USMC MBT";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 4;
@@ -198,9 +242,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Bison",
         };
-        className = "EF_B_MBT_01_TUSK_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_aav {
+    class EF_B_AAV9_50mm_MJTF_Des {
         displayName = "USMC AAV9 MACK";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 12;
@@ -208,9 +252,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Reaper",
         };
-        className = "EF_B_AAV9_50mm_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_schorcher {
+    class B_MBT_01_arty_F {
         displayName = "USMC M4 Schorcher";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 2;
@@ -218,9 +262,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Anvil",
         };
-        className = "B_MBT_01_arty_F";
+        type = "crewed";
     };
-    class USMC_medical {
+    class EF_B_Truck_01_medical_MJTF_Des {
         displayName = "USMC HEMTT Medical";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 4;
@@ -228,9 +272,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Hotel",
         };
-        className = "EF_B_Truck_01_medical_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_transport {
+    class EF_B_Truck_01_transport_MJTF_Des {
         displayName = "USMC HEMTT Transport";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 12;
@@ -238,9 +282,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Romeo",
         };
-        className = "EF_B_Truck_01_transport_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_ammo{
+    class EF_B_Truck_01_ammo_MJTF_Des{
         displayName = "USMC HEMTT Ammo";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
@@ -248,9 +292,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Able",
         };
-        className = "EF_B_Truck_01_ammo_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_fuel {
+    class EF_B_Truck_01_fuel_MJTF_Des {
         displayName = "USMC HEMTT Fuel";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
@@ -258,9 +302,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Whiskey",
         };
-        className = "EF_B_Truck_01_fuel_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_repair {
+    class EF_B_Truck_01_Repair_MJTF_Des {
         displayName = "USMC HEMTT Repair";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 8;
@@ -268,9 +312,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Uniform",
         };
-        className = "EF_B_Truck_01_Repair_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_mp_fsv {
+    class EF_B_MRAP_01_FSV_MJTF_Des {
         displayName = "USMC FSV";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 3;
@@ -278,9 +322,9 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Kilo",
         };
-        className = "EF_B_MRAP_01_FSV_MJTF_Des";
+        type = "crewed";
     };
-    class USMC_mp_laad {
+    class EF_B_MRAP_01_LAAD_MJTF_Des {
         displayName = "USMC LAAD";
         description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
         spawnLimit = 3;
@@ -288,57 +332,7 @@ class cfgCrewedVehicles {
         callsigns[] = {
             "Kilo",
         };
-        className = "EF_B_MRAP_01_LAAD_MJTF_Des";
-    };
-};
-
-// can only be spawned when attached to its parent
-class cfgAttachedVehicles {
-    class USMC_amv {
-        displayName = "USMC AMV 7 Marshal";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 7;
-        image = "images\units\infantry_platoon.paa";
-        className = "Aegis_B_MJTF_D_APC_Wheeled_01_atgm_v2";
-    };
-    class USMC_HunterAT {
-        displayName = "USMC AT MRAP";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 4;
-        image = "images\units\infantry_platoon.paa";
-        className = "EF_B_MRAP_01_AT_MJTF_Des";
-    };
-};
-
-// can spawn alone or with a squad
-class cfgEmptyVehicles {
-    class USMC_hunter {
-        displayName = "USMC Unarmed MRAP";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 12;
-        image = "images\units\infantry_platoon.paa";
-        className = "EF_B_MRAP_01_MJTF_Des";
-    };
-    class USMC_hunter_gmg {
-        displayName = "USMC GMG MRAP";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 9;
-        image = "images\units\infantry_platoon.paa";
-        className = "EF_B_MRAP_01_gmg_MJTF_Des";
-    };
-    class USMC_hunter_hmg {
-        displayName = "USMC HMG MRAP";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 21;
-        image = "images\units\infantry_platoon.paa";
-        className = "EF_B_MRAP_01_hmg_MJTF_Des";
-    };
-    class USMC_hemtt_transport {
-        displayName = "USMC HEMTT Transport";
-        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
-        spawnLimit = 2;
-        image = "images\units\infantry_platoon.paa";
-        className = "EF_B_Truck_01_transport_MJTF_Des";
+        type = "crewed";
     };
 };
 
@@ -372,6 +366,21 @@ class cfgRotorWings {
             "USMC_Infantry_HMG",
             "USMC_Infantry_Mortar",
             "USMC_Infantry_AT"
+        };
+    };
+};
+
+class cfgShips {
+    class EF_B_LCC_MJTF_Des {
+        displayName = "";
+        description = "Standard Marine rifle squad. Versatile assault infantry capable of sustained operations.";
+        spawnLimit = 12;
+        image = "images\units\infantry_platoon.paa";
+        loadOptions[] = {
+            "EF_B_MRAP_01_MJTF_Des",
+            "EF_B_MRAP_01_gmg_MJTF_Des",
+            "EF_B_MRAP_01_hmg_MJTF_Des",
+            "EF_B_Truck_01_transport_MJTF_Des"
         };
     };
 };

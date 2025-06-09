@@ -23,7 +23,7 @@ _unit addPrimaryWeaponItem "30Rnd_556x45_AP_Stanag_Tan_RF";
 comment "Add containers";
 _unit forceAddUniform "EF_U_B_MarineCombatUniform_Des_3";
 _unit addVest "EF_V_AAV_Rifleman_Coy";
-_unit addBackpack "EF_B_GMG_01_weapon_MJTF_des";
+_unit addBackpack "EF_B_RaiderPack_coy";
 
 comment "Add items to containers";
 _unit addItemToVest "FirstAidKit";
@@ -40,6 +40,15 @@ for "_i" from 1 to 8 do {
 };
 _unit addItemToVest "Aegis_HandFlare_Green";
 _unit addItemToVest "B_IR_Grenade";
+_unit addItemToBackpack "ToolKit";
+for "_i" from 1 to 4 do {
+	_unit addItemToBackpack "Chemlight_green";
+};
+_unit addItemToBackpack "Aegis_HandFlare_Green";
+_unit addItemToBackpack "B_IR_Grenade";
+for "_i" from 1 to 5 do {
+	_unit addItemToBackpack "SmokeShellBlue";
+};
 _unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
@@ -48,4 +57,9 @@ _unit linkItem "ItemMap";
 _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
+_unit linkItem "ItemGPS";
 _unit linkItem "NVGoggles";
+
+[_unit, "EF_29th_MEU_LowVis"] call BIS_fnc_setUnitInsignia;
+_unit setRank "CORPORAL";
+[_unit] call EAS_fnc_regular;

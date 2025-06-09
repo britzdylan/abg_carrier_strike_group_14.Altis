@@ -21,3 +21,12 @@ clearBackpackCargoGlobal _unit;
 {
 	_unit addBackpackCargoGlobal _x;
 } forEach [["B_Parachute", 20]];
+
+_unit addAction [
+	"Open Garrison",
+	{
+		params ["_target"];
+		[_target] call EAS_fnc_heliSpawnDialog;
+	}, nil, 1, true, false, "",
+	"[_target, EAS_area_carrier] call EAS_fnc_isVehicleInTriggerAlive"
+];

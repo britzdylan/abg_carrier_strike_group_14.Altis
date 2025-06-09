@@ -17,40 +17,31 @@ removeGoggles _unit;
 comment "Add weapons";
 _unit addWeapon "Aegis_arifle_M4A1_short_sand_F";
 _unit addPrimaryWeaponItem "EF_acc_pointer_IR_coy";
-_unit addPrimaryWeaponItem "ef_optic_Holosight_coy";
+_unit addPrimaryWeaponItem "ef_optic_mbs_sand";
 _unit addPrimaryWeaponItem "30Rnd_556x45_AP_Stanag_Tan_RF";
 
 comment "Add containers";
-_unit forceAddUniform "EF_U_B_MarineCombatUniform_Des_1";
-_unit addVest "EF_V_AAV_Support_Coy";
-_unit addBackpack "EF_B_Kitbag_coy_Exp";
+_unit forceAddUniform "EF_U_B_MarineCombatUniform_Des_3";
+_unit addVest "EF_V_AAV_Rifleman_Coy";
+_unit addBackpack "EF_B_HMG_01_weapon_MJTF_des";
 
 comment "Add items to containers";
+_unit addItemToVest "FirstAidKit";
 for "_i" from 1 to 2 do {
 	_unit addItemToVest "16Rnd_9x21_Mag";
 };
-for "_i" from 1 to 3 do {
-	_unit addItemToVest "APERSMine_Range_Mag";
+_unit addItemToVest "Chemlight_green";
+for "_i" from 1 to 2 do {
+	_unit addItemToVest "HandGrenade";
 };
 _unit addItemToVest "SmokeShell";
-_unit addItemToVest "SmokeShellGreen";
 for "_i" from 1 to 8 do {
 	_unit addItemToVest "30Rnd_556x45_AP_Stanag_Tan_RF";
 };
-_unit addItemToBackpack "ToolKit";
-_unit addItemToBackpack "MineDetector";
-for "_i" from 1 to 3 do {
-	_unit addItemToBackpack "APERSBoundingMine_Range_Mag";
-};
-for "_i" from 1 to 2 do {
-	_unit addItemToBackpack "ClaymoreDirectionalMine_Remote_Mag";
-};
-for "_i" from 1 to 2 do {
-	_unit addItemToBackpack "SLAMDirectionalMine_Wire_Mag";
-};
-_unit addItemToBackpack "DemoCharge_Remote_Mag";
+_unit addItemToVest "Aegis_HandFlare_Green";
+_unit addItemToVest "B_IR_Grenade";
 _unit addHeadgear "EF_H_MCH_BasicNet_Des";
-_unit addGoggles "G_Combat";
+_unit addGoggles "Aegis_G_Condor_EyePro_F";
 
 comment "Add items";
 _unit linkItem "ItemMap";
@@ -58,3 +49,7 @@ _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
 _unit linkItem "NVGoggles";
+
+[_unit, "EF_29th_MEU_LowVis"] call BIS_fnc_setUnitInsignia;
+_unit setRank "PRIVATE";
+[_unit] call EAS_fnc_regular;

@@ -10,7 +10,7 @@ if (_className == "" || _selectedUnit < 0) exitWith {
 	_infoCtrl ctrlSetStructuredText parseText "<t color='#ffaa00'>No loadout selected</t>";
 };
 
-private _infantryConfig = [_className] call EAS_fnc_getInfantryConfig;
+private _infantryConfig = (_missionData get "cfgInfantry") get _className;
 private _spawnLimit = _infantryConfig get "spawnLimit";
 
 private _garrison = _missionData get "Garrison";

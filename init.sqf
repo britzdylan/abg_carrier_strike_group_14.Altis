@@ -1,63 +1,56 @@
 // MISSION state.
-EAS_fnc_getAllInfantryConfigs = {
-	private _infantryConfig = missionConfigFile >> "cfgInfantry";
-	private _configs = [];
+EAS_fnc_parseConfigToHashMap = {
+	params ["_config"];
 
-	for "_i" from 0 to (count _infantryConfig - 1) do {
-		private _subClass = _infantryConfig select _i;
+	private _result = createHashMap;
 
-		if (isClass _subClass) then {
-			private _className = configName _subClass;
+	    // Handle different config entry types
+	{
+		private _entryName = configName _x;
 
-			            // Extract all properties from each sub-class
-			private _config = createHashMapFromArray [
-				["className", _className],
-				["displayName", getText (_subClass >> "displayName")],
-				["description", getText (_subClass >> "description")],
-				["spawnLimit", getNumber (_subClass >> "spawnLimit")],
-				["image", getText (_subClass >> "image")],
-				["callsigns", getArray (_subClass >> "callsigns")],
-				["unitClasses", getArray (_subClass >> "unitClasses")],
-				["attached", getArray (_subClass >> "attached")]
-			];
-
-			_configs pushBack _config;
+		if (isClass _x) then {
+			// Recursively parse sub-classes
+			_result set [_entryName, [_x] call EAS_fnc_parseConfigToHashMap];
+		} else {
+			// Handle properties
+			private _value = switch (true) do {
+				case (isNumber _x): {
+					getNumber _x
+				};
+				case (isText _x): {
+					getText _x
+				};
+				case (isArray _x): {
+					getArray _x
+				};
+				default {
+					configName _x
+				};
+			};
+			_result set [_entryName, _value];
 		};
-	};
+	} forEach (configProperties [_config, "true", true]);
 
-	_configs
+	_result;
 };
 
-EAS_fnc_getAllRotorWingConfigs = {
-	private _rotorConfig = missionConfigFile >> "cfgRotorWings";
-	private _configs = [];
+// private _config = missionConfigFile >> "cfgEmptyVehicles";
+_missionData = createHashMap;
+_missionData set ["MissionReady", false];
+_missionData set ["Garrison", createHashMapFromArray [["target", nil], ["infantrySquadsDeployed", 0]]];
 
-	for "_i" from 0 to (count _rotorConfig - 1) do {
-		private _subClass = _rotorConfig select _i;
+_missionData set ["cfgVehicles", [(missionConfigFile >> "cfgVehicles")] call EAS_fnc_parseConfigToHashMap];
+_missionData set ["cfgInfantry", [(missionConfigFile >> "cfgInfantry")] call EAS_fnc_parseConfigToHashMap];
+_missionData set ["cfgRotorWings", [(missionConfigFile >> "cfgRotorWings")] call EAS_fnc_parseConfigToHashMap];
+_missionData set ["cfgShips", [(missionConfigFile >> "cfgShips")] call EAS_fnc_parseConfigToHashMap];
 
-		if (isClass _subClass) then {
-			private _className = configName _subClass;
+missionNamespace setVariable ["EAS_missionData", _missionData];
 
-			            // Extract all properties from each sub-class
-			private _config = createHashMapFromArray [
-				["className", _className],
-				["capacity", getNumber (_subClass >> "capacity")],
-				["loadOptions", getArray (_subClass >> "loadOptions")]
-			];
-
-			_configs pushBack _config;
-		};
-	};
-
-	_configs
-};
-
-// Usage
-private _allInfantryConfigs = [] call EAS_fnc_getAllInfantryConfigs;
-private _allRotorWingConfig = [] call EAS_fnc_getAllRotorWingConfigs;
-missionNamespace setVariable ["EAS_missionData", createHashMapFromArray [
-	["Ready", false],
-	["InfantryConfig", _allInfantryConfigs],
-	["RotorWingConfig", _allRotorWingConfig],
-	["Garrison", createHashMapFromArray [["target", nil], ["infantrySquadsDeployed", 0]]]
-]];
+// missionNamespace setVariable ["EAS_missionData", createHashMapFromArray [
+	// ["Ready", false], 
+	// ["InfantryConfig", _allInfantryConfigs], 
+	// ["RotorWingConfig", _allRotorWingConfig], 
+	// ["cfgEmptyVehicles", _allEmptyVehiclesConfig], 
+	// ["NavalShipsConfig", _allNavalShipConfig], 
+	// ["Garrison", createHashMapFromArray [["target", nil], ["infantrySquadsDeployed", 0]]]
+// ]];

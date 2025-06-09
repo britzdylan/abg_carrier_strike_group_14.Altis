@@ -15,25 +15,30 @@ removeHeadgear _unit;
 removeGoggles _unit;
 
 comment "Add weapons";
-_unit addWeapon "LMG_Mk200_plain_F";
-_unit addPrimaryWeaponItem "muzzle_mzls_H";
-_unit addPrimaryWeaponItem "acc_flashlight";
+_unit addWeapon "Aegis_arifle_M4A1_short_sand_F";
+_unit addPrimaryWeaponItem "EF_acc_pointer_IR_coy";
 _unit addPrimaryWeaponItem "ef_optic_mbs_sand";
-_unit addPrimaryWeaponItem "200Rnd_65x39_cased_Box";
-_unit addPrimaryWeaponItem "bipod_01_F_snd";
+_unit addPrimaryWeaponItem "30Rnd_556x45_AP_Stanag_Tan_RF";
 
 comment "Add containers";
 _unit forceAddUniform "EF_U_B_MarineCombatUniform_Des_3";
-_unit addVest "EF_V_AAV_Support_Coy";
+_unit addVest "EF_V_AAV_Rifleman_Coy";
 
 comment "Add items to containers";
 _unit addItemToVest "FirstAidKit";
 for "_i" from 1 to 2 do {
 	_unit addItemToVest "16Rnd_9x21_Mag";
 };
+_unit addItemToVest "Chemlight_green";
 for "_i" from 1 to 2 do {
-	_unit addItemToVest "200Rnd_65x39_cased_Box";
+	_unit addItemToVest "HandGrenade";
 };
+_unit addItemToVest "SmokeShell";
+for "_i" from 1 to 8 do {
+	_unit addItemToVest "30Rnd_556x45_AP_Stanag_Tan_RF";
+};
+_unit addItemToVest "Aegis_HandFlare_Green";
+_unit addItemToVest "B_IR_Grenade";
 _unit addHeadgear "EF_H_MCH_BasicNet_Des";
 _unit addGoggles "Aegis_G_Condor_EyePro_F";
 
@@ -43,3 +48,11 @@ _unit linkItem "ItemCompass";
 _unit linkItem "ItemWatch";
 _unit linkItem "ItemRadio";
 _unit linkItem "NVGoggles";
+
+[_unit, "EF_29th_MEU_LowVis"] call BIS_fnc_setUnitInsignia;
+_unit setRank "PRIVATE";
+if (((_unit getVariable "EAS_unit") isEqualTo "DRIVER")) then {
+	[_unit] call EAS_fnc_regularDriver;
+} else {
+	[_unit] call EAS_fnc_regular;
+};

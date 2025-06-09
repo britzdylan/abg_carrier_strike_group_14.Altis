@@ -3,7 +3,7 @@ params ["_heli"];
 private _configClass = typeOf _heli;
 private _missionData = missionNamespace getVariable ["EAS_missionData", createHashMap];
 (_missionData get "Garrison") set ["target", _heli];
-private _heliConfig = [_configClass] call EAS_fnc_getRotorWingConfig;
+private _heliConfig = (_missionData get "cfgRotorWings") get _configClass;
 
 if (_heliConfig isEqualTo createHashMap) exitWith {
 	systemChat format ["Error: Helicopter config '%1' not found", _configClass];
@@ -16,7 +16,7 @@ private _freeSeats = _heli emptyPositions "cargo";
 // filter out loadOptions that are too big for avaialble seats
 _validLoadOptions = [];
 {
-	private _config = [_x] call EAS_fnc_getInfantryConfig;
+	private _config = (_missionData get "cfgInfantry") get _x;
 
 	if (!(_config isEqualTo createHashMap)) then {
 		private _requiredUnits = count (_config get "unitClasses");
